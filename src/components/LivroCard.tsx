@@ -20,12 +20,20 @@ export function LivroCard({ livro }: { livro: Livro }) {
         <p className="text-sm text-gray-600 mb-4">{livro.descricaoCurta}</p>
       </div>
       <span className="text-sm font-semibold text-[#5c1220] group-hover:underline">
-        {livro.disponivel ? 'Ler o guia →' : 'Em preparação'}
+        {livro.disponivel ? 'Ler →' : 'Em preparação'}
       </span>
     </div>
   )
 
   if (!livro.disponivel) return content
+
+  if (livro.externalUrl) {
+    return (
+      <a href={livro.externalUrl} target="_blank" rel="noopener noreferrer">
+        {content}
+      </a>
+    )
+  }
 
   return <Link to={`/livros/${livro.slug}`}>{content}</Link>
 }
