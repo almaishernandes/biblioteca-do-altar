@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { livros } from '../data/livros'
 import { LivroCard } from '../components/LivroCard'
 
@@ -17,6 +18,19 @@ export function Home() {
             <LivroCard key={livro.slug} livro={livro} />
           ))}
         </div>
+
+        <Link
+          to="/igreja-catolica"
+          className="mt-6 flex items-center gap-3 rounded-xl border border-[#0f4c81]/20 p-4 hover:shadow-md transition-shadow"
+        >
+          <span className="text-2xl shrink-0">🌍</span>
+          <div>
+            <h3 className="text-sm font-semibold text-gray-800">A Igreja Católica</h3>
+            <p className="text-xs text-gray-500">
+              Notícias, liturgia diária, rádios, TVs e cursos de formação católica.
+            </p>
+          </div>
+        </Link>
       </section>
     </div>
   )

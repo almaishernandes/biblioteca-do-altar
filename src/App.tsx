@@ -3,6 +3,7 @@ import { Navbar } from './components/Navbar'
 import { Footer } from './components/Footer'
 import { Home } from './pages/Home'
 import { GuiaZelusDomus } from './pages/GuiaZelusDomus'
+import { EventosIgrejaCatolica } from './pages/EventosIgrejaCatolica'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/livros/guia-zelusdomus" element={<GuiaZelusDomus />} />
+            <Route path="/igreja-catolica" element={<EventosIgrejaCatolica />} />
           </Routes>
         </main>
         <Footer />
